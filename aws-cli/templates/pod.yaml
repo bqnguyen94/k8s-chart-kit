@@ -1,0 +1,31 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: {{ template "aws-cli.name" . }}
+  labels:
+    name: {{ template "aws-cli.name" . }}
+  {{- if .Values.podAnnotations }}
+  annotations:
+    {{- range $key, $value := .Values.podAnnotations }}
+    {{ $key }}: {{ $value }}
+  {{- end}}
+  {{- end }}
+spec:
+  {{- if .Values.nodeSelector }}
+  nodeSelector:
+    {{ toYaml .Values.nodeSelector }}
+  {{- end }}
+  containers:
+    - image: quocbaonguyen/helper-images:awscli-{{ .Values.imageTag }}
+      command:
+        - "sleep"
+        - "9999999"
+      name: {{ template "aws-cli.name" . }}
+      {{- if .Values.containerVolumes }}
+      volumeMounts:
+        {{ toYaml .Values.containerVolumes }}
+      {{- end}}
+  {{- if .Values.volumes }}
+  volumes:
+    {{ toYaml .Values.volumes }}
+  {{- end }}

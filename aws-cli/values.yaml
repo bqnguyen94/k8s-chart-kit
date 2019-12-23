@@ -1,0 +1,25 @@
+podNameOverwrite: ""
+
+resources:
+  limits:
+    cpu: 200m
+    memory: 1.5Gi
+  requests:
+    cpu: 100m
+    memory: 1Gi
+
+nodeSelector: {}
+
+podAnnotations: []
+
+imageTag: "latest"
+
+# Volumes for the pod to mount k8s secrets.
+# Example:
+#   [{"name": "foo", "secret": {"secretName": "mySecret"}}]
+volumes: []
+
+# volumeMounts for the main container
+# In this example we mount the volume called foo into a path at /var/foo:
+#   [{"name": "foo", "mountPath": "/var/foo", "readOnly": true}]
+containerVolumes: []
