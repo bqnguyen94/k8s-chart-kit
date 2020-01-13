@@ -15,4 +15,4 @@ RUN alias cat=bat
 
 VOLUME ["~/.aws"]
 
-CMD ["/bin/bash", "--login"]
+CMD "/bin/sh"
