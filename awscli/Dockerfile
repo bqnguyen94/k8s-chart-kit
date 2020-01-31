@@ -1,4 +1,5 @@
 FROM python:3.7-alpine
+
 RUN apk -v update --no-cache add \
     htop \
     less \
@@ -8,6 +9,7 @@ RUN apk -v update --no-cache add \
     bat \
     unzip \
     openssh \
+    openssl \
     nmap
 RUN pip install awscli s3cmd
 RUN mkdir ~/.aws && \
