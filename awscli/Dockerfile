@@ -7,7 +7,8 @@ RUN apk -v update --no-cache add \
     nano \
     bat \
     unzip \
-    openssh
+    openssh \
+    nmap
 RUN pip install awscli s3cmd
 RUN mkdir ~/.aws && \
     chmod 700 ~/.aws
