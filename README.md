@@ -5,4 +5,4 @@ that may come in handy when debugging Kubernetes deployments.
 
 ### Deployment
 Docker images are automatically built by Docker Hub when a release tag with valid format,
-e.g. `releasename-version`, is pushed.
+e.g. `releasename-version`, is pushed to GitHub.
