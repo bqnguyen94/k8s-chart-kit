@@ -1,6 +1,6 @@
 FROM python:3.7-alpine
 
-RUN apk -v update --no-cache add \
+RUN apk update -v --no-cache && apk add -v --no-cache \
     htop \
     less \
     groff \
