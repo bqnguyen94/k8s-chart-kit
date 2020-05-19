@@ -10,7 +10,9 @@ RUN apk -v update --no-cache add \
     unzip \
     openssh \
     openssl \
-    nmap
+    nmap \
+    curl \
+    busybox-extras
 RUN pip install awscli s3cmd
 RUN mkdir ~/.aws && \
     chmod 700 ~/.aws
